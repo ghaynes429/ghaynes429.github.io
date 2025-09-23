@@ -1,1 +1,84 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Learning Terminal</title>
+	</head>
+	<body>
+		<h1>Intro to Terminal</h1>
+		<p>Today, I'll be teaching you to navigate the terminal. The terminal is a tool that lets you communicate with your computer using just text commands. There are no menus or confusing visuals, but rather commands such as cd, ls, etc...</p>
+
+		<h2>Why Should YOU Learn the Terminal?</h2>
+		<ul>
+			<li>It's faster for things such as file editing</li>
+			<li>It grants access to tools that you couldn't access otherwise</li>
+			<li>It shows you how your computer works on a deeper level!</li>
+		</ul>
+
+		<h2>Starter Guide for Terminal Commands</h2>
+
+		<p>These are some of the commands that'll help you navigate the terminal on your first visit:</p>
+		<ul>
+			<li><code>cd</code> - changes which directory you're in (ex. <code>cd desktop</code> takes you to your desktop.)</li>
+			<li><code>ls</code> - lists what files are in the current directory (ex. <code>ls</code> (while in desktop) will show you what folders are on your desktop)</li>
+			<li><code>pwd</code> - shows you where you are on your computer (ex. <code>pwd</code> while you're in your desktop will say you're in your desktop)</li>
+			<li><code>mkdir</code> - makes a new directory (ex. <code>mkdir cool_stuff</code> makes a new directory called cool_stuff)</li>
+		</ul>
+
+		<p>Now that you've learned the basics, let's give an example of how to make a folder called "folder_1" in the terminal!</p>
+
+		<ol>
+			<li>Open the Terminal.</li>
+			<li>Type <code>pwd</code> to check where you are on the computer</li>
+			<li>Type <code>cd desktop</code> to move to your desktop</li>
+			<li>Type <code>mkdir folder_1</code> to make a folder called "folder_1"</li>
+			<li>Type <code>cd folder_1</code> to go inside the folder</li>
+			<li>Type <code>pwd</code> to make sure you're inside the right folder</li>
+			<li>Enjoy the new folder!</li>
+		</ol>
+		<br>
+		<p>Here's an example session you might see when running commands:</p>
+		<pre><code>
+		% pwd
+		/student/Desktop
+		% ls
+		folder_1 folder_2 folder_3
+		% cd folder_1
+		% pwd
+		/student/Desktop/folder_1
+		</code></pre>
+		
+		<h2>How to Enter Vim</h2>
+
+		<p>Let's teach you how to edit a file with Vim.</p>
+
+		<p>Vim is a program where you can insert text within a file and turn it into a website, informative presentation such as this one you're reading, or more.</p>
+
+		<p>Let's teach you how to use Vim to edit a file called "teachmevim.html" inside the "folder_1" directory.</p>
+
+		<pre><code>
+		% pwd
+		/student
+		% cd desktop/folder_1
+		% pwd
+		/student/Desktop/folder_1
+		% vim teachmevim.html
+		</code></pre>
+
+		<p>Once you complete the steps above, you should be in Vim to edit your file called "teachmevim.html"</p>
+
+		<h2>Vim Commands & How to Use Them</h2>
+
+		<p>Now that you know how to enter Vim, how do you EDIT a file</p>
+
+		<p>Well here's a few simple commands to get you started:</p>
+
+		<ul>
+			<li>Type <kbd>I</kbd> to enter insert mode, which allows you to enter text.</li>
+			<li>When inside of insert mode, you can type <kbd>esc</kbd> followed by <kbd>:syntax on</kbd> to highlight the code in colors to make it easier to read.</li>
+			<li>Once you're finished editing in Vim, you can type <kbd>esc</kbd> followed by <kbd>:wq</kbd> to save and exit the file with all your data remaining within.</li>
+		</ul>
+
+		<h2>Conclusion</h2>
+		<p>Though the terminal may feel intimidating at first, practice makes perfect when it comes to using and mastering it. Just keep practicing, and you'll become a pro at it.</p>
+	</body>
+</html>
