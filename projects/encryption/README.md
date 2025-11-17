@@ -4,10 +4,10 @@
 
 ## Part 1: Key Exchange
 
-My Key:
-My Partner's Key:
+My Key:6
+My Partner's Key:7
 
-Our initial shared key:
+Our initial shared key:13
 
 ## Part 2: Messaging
 
@@ -19,10 +19,10 @@ and the messages that you received.
 
 | Encoded Message | Decoded Message | Key |
 | --------------- | --------------- | --- |
-|                 |                 |     |
-|                 |                 |     |
-|                 |                 |     |
-|                 |                 |     |
+| yhzoreybba      | lumberloon      | 13  |
+| mhyues aifyg    | sneaky golem    | 20  |
+| tkd spgi vdvvxc | evo dart goggins| 15  |
+| evo royal giant | evo royal giant | 0   |
 
 
 ## Part 3: Connection to TCP/IP Model
@@ -37,7 +37,7 @@ Go back to the first encrypted message that you sent (it should be in `rsa_encry
 
 This message is represented as a string of letters, numbers, and symbols. But we know that the real message is in binary.
 
-Select the first six characters from this message and copy them here:
+Select the first six characters from this message and copy them here: yhzore
 
 Using the ASCII table, convert these five characters to binary (if necessary,
 include leading zeroes so that each character is 8 bits): 
@@ -47,26 +47,26 @@ include leading zeroes so that each character is 8 bits):
 Assume that each packet can hold two bytes. Fill in the packet information below with the binary values you computed above.
 
     =========
-    Packet 1:
+    Packet 1:yhzore
 
-    Source: [Your Name]
-    Destination: [Partner's Name]  
+    Source: [Gabe]
+    Destination: [JJ]  
     Sequence: 1/3
-    Data: [binary for char 1] [binary for char 2]
+    Data: [01011001] [01101000]
     =========
-    Packet 2:
+    Packet 2:yhzore
 
-    Source: [Your Name]
-    Destination: [Partner's Name]
+    Source: [Gabe]
+    Destination: [JJ]
     Sequence: 2/3 
-    Data: [binary for char 3] [binary for char 4]
+    Data: [01111010] [01101111]
     =========
-    Packet 3:
+    Packet 3:yhzore
 
-    Source: [Your Name]
-    Destination: [Partner's Name]
+    Source: [Gabe]
+    Destination: [JJ]
     Sequence: 3/3
-    Data: [binary for char 5] [binary for char 6]
+    Data: [01110010] [01100101]
     =========
 
 ## Part 4: Reflection Questions
