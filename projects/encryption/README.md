@@ -72,9 +72,15 @@ Assume that each packet can hold two bytes. Fill in the packet information below
 ## Part 4: Reflection Questions
 
 - What is the difference between symmetric and asymmetric encryption? What purpose did each serve in this simulation?
+Symmetric encryption uses one shared key for both encryption and decryption, while asymmetric encryption uses a public key and a private key. In the simulation, asymmetric encryption was used to safely exchange the secret key, and symmetric encryption was used to encrypt the actual message because it’s faster.
 - Why is it important that this protocol uses a new key for each message?
+Using a new key each time limits the damage if a key is ever exposed. It also prevents attackers from collecting many messages encrypted with the same key and using patterns to break the encryption.
 - Why is it important that you never share your secret key?
+Your secret key allows someone to decrypt your messages or impersonate you, so sharing it destroys your security. Keeping it private ensures only you can read the encrypted content.
 - In the transport layer, do these messages use TCP or UDP? Why?
+These packets act like TCP because they include sequence numbers and ordered delivery. TCP is used when reliability is required, which these packets clearly depend on.
 - Now that you've created packets in the transport layer, give a short explanation of what happens to these packets in the internet layer and in the link layer.
+In the internet layer, each packet is wrapped in an IP header and routed across different networks toward the destination. At the link layer, the packet is turned into a frame with MAC addresses and sent across the physical network hardware.
 - This protocol successfully encrypts the **content** of the message. Even though and adversary in the middle can't read the content of the message, what other
 information can they still see?
+They can still see metadata such as IP addresses, packet sizes, and timing. Even though they can’t read the encrypted content, this information can reveal who is communicating and how often.
