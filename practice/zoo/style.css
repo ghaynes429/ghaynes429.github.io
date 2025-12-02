@@ -5,9 +5,11 @@ table, td, tr, th{
 }
 body{
 	background-color: #676767;
+	font-family: "Times New Roman", serif;
 }
 h1{
 	background-color: LemonChiffon;
 #info{
 	background-color: BurlyWood;
 }
+
