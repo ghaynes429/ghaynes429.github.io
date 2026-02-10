@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Canvas</title>
+<style>
+		canvas{
+		border: black 1px solid;
+		}
+</style>
+	</head>
+	<body>
+		<h1>Here's a Canvas</h1>
+		<canvas id="canvas" width="800" height="800">
+	</canvas>
+	<script>
+		const canvas = document.getElementById("canvas");
+		const ctx = canvas.getContext("2d");
+
+		//small red square towards the top-middle
+		ctx.fillStyle = "red";
+		ctx.fillRect(0,0,800,800);
+
+
+		//draw a green rectangle
+		ctx.fillStyle = "green";
+		ctx.fillRect(350,100,100,100);
+
+		//black circle
+		ctx.fillStyle = "black";
+		//first - Draw the shape
+		ctx.beginPath();
+		ctx.arc(400,400,100,2*Math.PI);
+		//then - fill the shape
+		ctx.fill();
+
+	</script>
+	</body>
+</html>
