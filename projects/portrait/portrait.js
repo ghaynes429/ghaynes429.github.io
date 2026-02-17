@@ -26,3 +26,32 @@ ctx.beginPath();
 ctx.fillStyle = "##b97a57";
 ctx.arc(300, 250, 100, 0, Math.PI * 2);
 ctx.fill();
+
+// ---------------------
+// HAIR
+// ---------------------
+ctx.fillStyle = "#111";
+
+// top hair
+ctx.beginPath();
+ctx.arc(300, 180, 110, Math.PI, Math.PI * 2);
+ctx.fill();
+
+// left hair thing
+ctx.beginPath();
+ctx.arc(220, 190, 60, 0, Math.PI * 2);
+ctx.fill();
+
+// right hair thing
+ctx.beginPath();
+ctx.arc(380, 190, 60, 0, Math.PI * 2);
+ctx.fill();
+
+// extra hair shapes
+ctx.beginPath();
+ctx.arc(260, 150, 40, 0, Math.PI * 2);
+ctx.fill();
+
+ctx.beginPath();
+ctx.arc(340, 150, 40, 0, Math.PI * 2);
+ctx.fill();
