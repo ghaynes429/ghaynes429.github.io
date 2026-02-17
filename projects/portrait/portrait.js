@@ -8,12 +8,6 @@ ctx.fillStyle = "#3a6ea5"; // blue wall
 ctx.fillRect(0, 0, 600, 600);
 
 // ---------------------
-// CHAIR
-// ---------------------
-ctx.fillStyle = "#111111";
-ctx.fillRect(200, 300, 200, 250); // chair back
-
-// ---------------------
 // NECK
 // ---------------------
 ctx.fillStyle = "#b97a57";
@@ -131,4 +125,74 @@ ctx.fill();
 // goatee
 ctx.beginPath();
 ctx.arc(300, 340, 15, 0, Math.PI * 2);
+ctx.fill();
+
+// ---------------------
+// EARS
+// ---------------------
+
+// left ear
+ctx.fillStyle = "#b97a57";
+ctx.beginPath();
+ctx.arc(200, 250, 20, 0, Math.PI * 2);
+ctx.fill();
+
+// right ear
+ctx.beginPath();
+ctx.arc(400, 250, 20, 0, Math.PI * 2);
+ctx.fill();
+
+// ---------------------
+// HAIR
+// ---------------------
+ctx.fillStyle = "#111";
+
+// top hair
+ctx.beginPath();
+ctx.arc(300, 180, 110, Math.PI, Math.PI * 2);
+ctx.fill();
+
+// left hair thing
+ctx.beginPath();
+ctx.arc(220, 190, 60, 0, Math.PI * 2);
+ctx.fill();
+
+// right hair thing
+ctx.beginPath();
+ctx.arc(380, 190, 60, 0, Math.PI * 2);
+ctx.fill();
+
+// extra hair shapes
+ctx.beginPath();
+ctx.arc(260, 150, 40, 0, Math.PI * 2);
+ctx.fill();
+
+ctx.beginPath();
+ctx.arc(340, 150, 40, 0, Math.PI * 2);
+ctx.fill();
+
+
+// ---------------------
+// SHIRT
+// ---------------------
+ctx.fillStyle = "#ddd";
+ctx.fillRect(200, 380, 200, 200);
+
+// sleeves
+ctx.fillStyle = "#ccc";
+
+// left sleeve
+ctx.beginPath();
+ctx.moveTo(200, 380);
+ctx.lineTo(150, 500);
+ctx.lineTo(200, 500);
+ctx.closePath();
+ctx.fill();
+
+// right sleeve
+ctx.beginPath();
+ctx.moveTo(400, 380);
+ctx.lineTo(450, 500);
+ctx.lineTo(400, 500);
+ctx.closePath();
 ctx.fill();
