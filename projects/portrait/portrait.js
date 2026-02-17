@@ -55,3 +55,30 @@ ctx.fill();
 ctx.beginPath();
 ctx.arc(340, 150, 40, 0, Math.PI * 2);
 ctx.fill();
+
+// ---------------------
+// LEFT EYE
+// ---------------------
+ctx.fillStyle = "white";
+ctx.beginPath();
+ctx.arc(260, 240, 20, 0, Math.PI * 2);
+ctx.fill();
+
+ctx.fillStyle = "black";
+ctx.beginPath();
+ctx.arc(260, 240, 10, 0, Math.PI * 2);
+ctx.fill();
+
+// ---------------------
+// RIGHT EYE
+// ---------------------
+ctx.fillStyle = "white";
+ctx.beginPath();
+ctx.arc(340, 240, 20, 0, Math.PI * 2);
+ctx.fill();
+
+ctx.fillStyle = "black";
+ctx.beginPath();
+ctx.arc(340, 240, 10, 0, Math.PI * 2);
+ctx.fill();
+
