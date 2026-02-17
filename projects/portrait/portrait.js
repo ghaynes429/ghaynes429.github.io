@@ -82,3 +82,53 @@ ctx.beginPath();
 ctx.arc(340, 240, 10, 0, Math.PI * 2);
 ctx.fill();
 
+// ---------------------
+// GLASSES
+// ---------------------
+ctx.strokeStyle = "black";
+ctx.lineWidth = 3;
+
+ctx.strokeRect(230, 220, 60, 40);
+ctx.strokeRect(310, 220, 60, 40);
+
+// bridge
+ctx.beginPath();
+ctx.moveTo(290, 240);
+ctx.lineTo(310, 240);
+ctx.stroke();
+
+// ---------------------
+// NOSE (polygon)
+// ---------------------
+ctx.fillStyle = "#a56b3f";
+ctx.beginPath();
+ctx.moveTo(300, 250);
+ctx.lineTo(290, 290);
+ctx.lineTo(310, 290);
+ctx.closePath();
+ctx.fill();
+
+// ---------------------
+// MOUTH (arc)
+// ---------------------
+ctx.strokeStyle = "black";
+ctx.beginPath();
+ctx.arc(300, 300, 30, 0, Math.PI);
+ctx.stroke();
+
+// ---------------------
+// FACIAL HAIR (mustache)
+// ---------------------
+ctx.fillStyle = "#111";
+ctx.beginPath();
+ctx.arc(280, 285, 15, 0, Math.PI);
+ctx.fill();
+
+ctx.beginPath();
+ctx.arc(320, 285, 15, 0, Math.PI);
+ctx.fill();
+
+// goatee
+ctx.beginPath();
+ctx.arc(300, 340, 15, 0, Math.PI * 2);
+ctx.fill();
