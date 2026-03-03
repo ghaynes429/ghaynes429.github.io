@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<body>
+<canvas id="myCanvas" width="800" height="200" style="border:1px solid #000000;"></canvas>
+
+<script>
+const canvas = document.getElementById("myCanvas");
+const ctx = canvas.getContext("2d");
+
+let speed = 3;
+let shapes = [
+    { type: "circle", x: 0, y: 100, radius: 20, color: "red" },
+    { type: "triangle", x: -80, y: 100, size: 30, color: "green" },
+    { type: "square", x: -160, y: 100, size: 30, color: "blue" },
+    { type: "circle", x: -240, y: 100, radius: 20, color: "orange" },
+    { type: "triangle", x: -320, y: 100, size: 30, color: "purple" },
+    { type: "square", x: -400, y: 100, size: 30, color: "pink" }
+];
+
+function drawShape(shape) {
+    if (shape.type === "circle") {
+        ctx.beginPath();
+        ctx.arc(shape.x, shape.y, shape.radius, 0, Math.PI * 2);
+        ctx.fillStyle = shape.color;
+        ctx.fill();
+        ctx.closePath();
+    } else if (shape.type === "triangle") {
+        ctx.beginPath();
+        ctx.moveTo(shape.x, shape.y - shape.size / 2);
+        ctx.lineTo(shape.x - shape.size / 2, shape.y + shape.size / 2);
+        ctx.lineTo(shape.x + shape.size / 2, shape.y + shape.size / 2);
+        ctx.closePath();
+        ctx.fillStyle = shape.color;
+        ctx.fill();
+    } else if (shape.type === "square") {
+        ctx.fillStyle = shape.color;
+        ctx.fillRect(shape.x - shape.size/2, shape.y - shape.size/2, shape.size, shape.size);
+    }
+}
+
+function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    for (let i = 0; i < shapes.length; i++) {
+        shapes[i].x += speed;
+        drawShape(shapes[i]);
+
+        if (shapes[i].x - 50 > canvas.width) {
+            let prevIndex = i === 0 ? shapes.length - 1 : i - 1;
+            shapes[i].x = shapes[prevIndex].x - 80;
+        }
+    }
+
+    requestAnimationFrame(animate);
+}
+
+animate();
+</script>
+</body>
+</html>
