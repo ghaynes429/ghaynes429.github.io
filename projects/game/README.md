@@ -15,11 +15,11 @@ graph TD;
     Outside-->Lobby;
     Lobby<-->Customer;
     Lobby<-->FrontDesk;
-    Lobby<-->PlayPlaceEntrance;
-    PlayPlaceEntrance-->Slide;
+    Lobby<-->PlayPlace;
+    PlayPlace-->Slide;
     Slide-->BallPit;
-    PlayPlaceEntrance<-->Tunnel;
-    PlayPlaceEntrance<-->BallPit;
+    PlayPlace<-->Tunnel;
+    PlayPlace<-->BallPit;
 
 
 ```
