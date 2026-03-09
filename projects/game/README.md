@@ -1,4 +1,5 @@
-# Chris Needs Coffee
+# ESCAPE FROM MCDONALDS PLAY PLACE GAME!!
+
 
 ## Setting
 
@@ -10,28 +11,26 @@ library to the first floor.
 
 ```mermaid
 graph TD;
-    bus(((Bus)))-->Commons;
-    Library-->Commons;
-    Box-->Cafeteria;
-    Cafeteria-->Commons;
-    Commons-->Outside;
-    Outside-->Portable;
-    Portable-->rm511;
-    Portable-->Bathroom;
+    Outside<-->Creepy Guy;
+    Outside-->Lobby;
+    Lobby<-->Customer;
+    Lobby<-->Front Desk;
+    Lobby<-->Play Place Entrance;
+    Play Place Entrance-->Slide;
+    Slide-->Ball Pit:
+    Play Place Entrance<-->Tunnel;
+    Play Place Entrance<-->Ball Pit;
+
+
 ```
 
-The player starts on the bus, and then is directed into the Commons. T
-They can explore, but must eventually make their way to rm511.
+The player starts outside, and is suppose to speak with the creepy guy outside. He asks for food so you go inside as you're feeling generous. However, there might be something in store for you inside.
 
 ## Story
 
-When the user gets to rm511, they learn that the teacher is asleep.
-They must take the teacher's coffee mug to the library, get it 
-filled, and then bring it back to the teacher.
+You're at McDonalds, looking for a delicious lunch. You come across a man who looks somewhat shady, but honest nonetheless. He's hungry, and you decide to grab him some food. However, he doesn't have faith in your actions, and locks you inside to make sure you buy him food.
 
-The game starts 15 minutes before the morning class bell, and each
-move costs 1 minute. So this journey must be completed in 15 moves.
-Some moves (like reading a book in the library) cost extra time.
+You have 15 minutes to escape the McDonalds, and if you don't he'll get Grimace to get you and you'll be trapped forever. The end goal is to acquire a McChicken, and bring it to the locked door so the homeless man lets you out.
 
 ## Global Variables
 
