@@ -13,6 +13,7 @@ library to the first floor.
 graph TD;
     Outside<-->CreepyGuy;
     Outside-->Lobby;
+    Lobby<-->Lock;
     Lobby<-->Customer;
     Lobby<-->FrontDesk;
     Lobby<-->PlayPlace;
