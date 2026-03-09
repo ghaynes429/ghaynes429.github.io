@@ -35,13 +35,11 @@ You have 15 minutes to escape the McDonalds, and if you don't he'll get Grimace 
 ## Global Variables
 
 The most important variables are
-`haveCup` and `cupIsFull`, both
+`haveNote` and `haveMcChicken`, both
 booleans that track progress in the
 story. Depending on these two variables,
-some rooms will display different things. For example, if you walk into the
-library without the cup, it will prompt you to
-read. If you walk in with the cup, it will show
-the librarian filling the cup with coffee.
+some rooms will display different things. For example, if you walk to the front desk without the note, it will prompt you to spend 1000$ on the new Big Arch that the CEO wouldn't eat. If you walk in with the note, it will show the cashier actually asking what you'd like.
+
 
 I also have numeric variables called `day` and `minute` which keep track of 
 time. `minute` starts at 0 and counts up
