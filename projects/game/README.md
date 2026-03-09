@@ -11,15 +11,15 @@ library to the first floor.
 
 ```mermaid
 graph TD;
-    Outside<-->Creepy Guy;
+    Outside<-->CreepyGuy;
     Outside-->Lobby;
     Lobby<-->Customer;
-    Lobby<-->Front Desk;
-    Lobby<-->Play Place Entrance;
-    Play Place Entrance-->Slide;
-    Slide-->Ball Pit:
-    Play Place Entrance<-->Tunnel;
-    Play Place Entrance<-->Ball Pit;
+    Lobby<-->FrontDesk;
+    Lobby<-->PlayPlaceEntrance;
+    PlayPlaceEntrance-->Slide;
+    Slide-->BallPit:
+    PlayPlaceEntrance<-->Tunnel;
+    PlayPlaceEntrance<-->BallPit;
 
 
 ```
