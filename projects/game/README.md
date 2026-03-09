@@ -17,7 +17,7 @@ graph TD;
     Lobby<-->FrontDesk;
     Lobby<-->PlayPlaceEntrance;
     PlayPlaceEntrance-->Slide;
-    Slide-->BallPit:
+    Slide-->BallPit;
     PlayPlaceEntrance<-->Tunnel;
     PlayPlaceEntrance<-->BallPit;
 
