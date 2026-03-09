@@ -10,13 +10,14 @@ let gameActive = true; //this variable is required.
 //Make one function for each location
 function locationA() {
     clear();
-    print("\nYou are in location A!");
-    print("\nWhere do you want to go next? Say one of these choices:" +
-        "\n\tlocationB");
+    print("\nI’ve finally arrived at McDonald’s, I can’t wait to try out the new Big Arch. I heard the CEO loves it!");
+    print("\nWhere should I go? There's some intriguing creepy guy, but I'm also REALLY hungry" +
+        "\n\tCreepyGuy" +
+	"\n\tLobby");
     
     function processInput(input){
-        if (input.toLowerCase() === "locationb") {
-            locationB();
+        if (input.toLowerCase() === "creepyguy") {
+           creepyguy ();
         } else {
             stayHere();
             waitThenCall(locationA);
