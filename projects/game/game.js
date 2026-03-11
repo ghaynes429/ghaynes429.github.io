@@ -1,5 +1,12 @@
-let gameActive = true; //this variable is required. 
-                       //to stop the game, set it to false.
+let gameActive = true;
+let talktoCreepy = false;
+let haveNote = false;
+let haveMcChicken = false;
+let day = 0;
+let minutes = 0;
+
+
+  
 
 //Declare your other global variables here
 
@@ -27,14 +34,18 @@ function locationA() {
 
 }
 function creepyguy(){
+	talktoCreepy = true;
     clear();
-    print("\nI’m gonna talk to this creepy guy… hopefully I don’t get robbed or something…");print("\nCreepy Guy (him): H-hey… do you by chance have money to spare…? I’d REALLY like a McChicken...");
+    print("\nI’m gonna talk to this creepy guy… hopefully I don’t get robbed or something…");print("\nCreepy Guy: H-hey… do you by chance have money to spare…? I’d REALLY like a McChicken..." + "\n\tLobby");
 }
-
 function lobby(){
 	clear();
-	print("\nDrats! It’s locked, I guess I might as well talk to the creepy guy…");
-
+	if (talktoCreepy == false){
+	print("\nDrats! It’s locked, I guess I might as well talk to the creepy guy…" + "\n\tCreepyGuy");
+	}
+	else if (talktoCreepy == true){
+		print("\nOh wow, I could've swore it was locked before..." + "\n\tFrontDesk");
+	}
        function processInput(input){
         if (input.toLowerCase() === "creepyguy") {
 		creepyguy();
