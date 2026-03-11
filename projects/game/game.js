@@ -11,13 +11,33 @@ let gameActive = true; //this variable is required.
 function locationA() {
     clear();
     print("\nI’ve finally arrived at McDonald’s, I can’t wait to try out the new Big Arch. I heard the CEO loves it!");
-    print("\nWhere should I go? There's some intriguing creepy guy, but I'm also REALLY hungry" +
-        "\n\tCreepyGuy" +
-	"\n\tLobby");
-    
-    function processInput(input){
+    print("\nWhere should I go? There's some intriguing creepy guy, but I'm also REALLY hungry" + "\n\tCreepyGuy" + "\n\tLobby");
+
+       function processInput(input){
         if (input.toLowerCase() === "creepyguy") {
-           creepyguy ();
+		creepyguy();
+	}	else if (input.toLowerCase() === "lobby"){
+		lobby();
+        } else {
+            stayHere();
+            waitThenCall(locationA);
+        }
+    }
+    waitForInput(processInput);
+
+}
+function creepyguy(){
+    clear();
+    print("\nI’m gonna talk to this creepy guy… hopefully I don’t get robbed or something…");print("\nCreepy Guy (him): H-hey… do you by chance have money to spare…? I’d REALLY like a McChicken...");
+}
+
+function lobby(){
+	clear();
+	print("\nDrats! It’s locked, I guess I might as well talk to the creepy guy…");
+
+       function processInput(input){
+        if (input.toLowerCase() === "creepyguy") {
+		creepyguy();
         } else {
             stayHere();
             waitThenCall(locationA);
