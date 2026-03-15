@@ -48,27 +48,85 @@ function lobby(){
     else{
 
         print("\nOh wow, I could've swore it was locked before...");
+	print("\nI look back and see the same guy walking to the door and use a key to turn the doorknob... I hear a weird *click* noise... I try to open the door and then...");
+	print("\nWhat the hell??? That creepy bastard locked me in!");
         print("\nWhere should I go?" + "\n\tFrontDesk" + "\n\tCustomer" + "\n\tPlayplaceLobby" + "\n\tFrontDoor");
 
     }
 }
+  function processInput(input){
 
-function locationB() {
-    clear();
-    print("\nYou are in location B!");
-    print("\nWhere do you want to go next? Say one of these choices:" +
-        "\n\tlocationA");
-    
-    function processInput(input){
-        if (input.toLowerCase() === "locationa") {
-            locationA();
-        } else {
+
+        if (input.toLowerCase() === "frontdesk"){
+            frontDesk();
+        }
+
+        else if (input.toLowerCase() === "customer"){
+            talkCustomer();
+        }
+
+        else if (input.toLowerCase() === "playplacelobby"){
+            playplaceLobby();
+        }
+
+        else if (input.toLowerCase() === "frontdoor"){
+            frontDoor();
+        }
+
+        else{
             stayHere();
-            waitThenCall(locationB);
+            waitThenCall(lobby);
         }
     }
+
+    waitForInput(processInput);
+
+
+function frontDesk(){
+    clear();
+
+    if(haveNote == false){
+
+        print("\nYou walk up to the front desk.");
+        print("\n[INSERT TEXT HERE LATER]");
+        print("\n\tLobby");
+
+    }
+
+    else if(haveNote == true && haveMcChicken == false){
+
+        print("\nWorker: Oh! You found the note from the playplace?");
+        print("\nWorker: Alright... I guess I'll sell you a McChicken.");
+
+        haveMcChicken = true;
+
+        print("\nYou obtained a McChicken!");
+        print("\n\tLobby");
+
+    }
+
+    else{
+
+        print("\nWorker: Enjoy your McChicken.");
+        print("\n\tLobby");
+
+    }
+
+    function processInput(input){
+
+        if(input.toLowerCase() === "lobby"){
+            lobby();
+        }
+
+        else{
+            stayHere();
+            waitThenCall(frontDesk);
+        }
+    }
+
     waitForInput(processInput);
 }
+
 
 //finally, make sure you customize this to tell it what should happen at the
 //very start. For this simple example, any input will bring you
