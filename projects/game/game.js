@@ -6,13 +6,6 @@ let day = 0;
 let minutes = 0;
 
 
-//Declare your other global variables here
-
-
-//If you need, add any "helper" functions here
-
-
-//Make one function for each location
 function locationA() {
     clear();
     print("\nI’ve finally arrived at McDonald’s, I can’t wait to try out the new Big Arch. I heard the CEO loves it!");
@@ -65,7 +58,7 @@ function lobby(){
 
         print("\nOh wow, I could've swore it was locked before...");
         print("\nI look back and see the same guy walking to the door and use a key to turn the doorknob... I hear a weird *click* noise... I try to open the door and then...");
-        print("\nWhat the hell??? That creepy bastard locked me in!");
+        print("\nWhat the h*ll??? That creepy b*stard locked me in!");
         print("\nWhere should I go?" + "\n\tFrontDesk" + "\n\tCustomer" + "\n\tPlayplaceLobby" + "\n\tFrontDoor");
 
     }
@@ -109,6 +102,7 @@ function frontDesk(){
 
         print("\nYou walk up to the front desk.");
         print("\nChris: ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ The worker is fast asleep...");
+	print("\nMaybe he needs some coffee... wait nevermind,that's a different game.");
         print("\n\tLobby");
 
     }
@@ -325,7 +319,6 @@ function frontDoor(){
 }
 
 
-//Game start
 function start(){
     print("\nWelcome to McDonalds! May I take your order? (Press any key to start)");
 
