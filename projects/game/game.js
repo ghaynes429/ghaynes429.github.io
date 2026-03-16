@@ -54,10 +54,13 @@ function lobby(){
 
     }
 }
-  function processInput(input){
+    function processInput(input){
 
+        if (input.toLowerCase() === "creepyguy") {
+            creepyguy();
+        }
 
-        if (input.toLowerCase() === "frontdesk"){
+        else if (input.toLowerCase() === "frontdesk"){
             frontDesk();
         }
 
@@ -82,25 +85,29 @@ function lobby(){
     waitForInput(processInput);
 
 
+
 function frontDesk(){
     clear();
 
     if(haveNote == false){
 
         print("\nYou walk up to the front desk.");
-        print("\n[INSERT TEXT HERE LATER]");
+        print("\nChris: ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ The worker is fast asleep...");
         print("\n\tLobby");
 
     }
 
     else if(haveNote == true && haveMcChicken == false){
 
-        print("\nWorker: Oh! You found the note from the playplace?");
-        print("\nWorker: Alright... I guess I'll sell you a McChicken.");
+        print("\nThe sound of my footsteps awaken the worker.");
+	print("\nChris: ZZZZ- WHAT?!? Oh... it's a customer. What would you like?");
+	print("\nMe: I'd like one McChicken please!");
+        print("\nChris: Alright... I guess I'll sell you a McChicken.");
 
         haveMcChicken = true;
 
         print("\nYou obtained a McChicken!");
+	print("\nThat guy really should get fired... He'd work better as a web design teacher or something...");
         print("\n\tLobby");
 
     }
@@ -127,6 +134,141 @@ function frontDesk(){
     waitForInput(processInput);
 }
 
+
+function talkCustomer(){
+    clear();
+
+    print("\nI decided to talk to the to customers.");
+    print("\nWaleed: Hey man... I need some money... This guy locked me in here and is demanding for a McChicken...");
+    print("\nI decide to ignore him... I need gas money.");
+    print("\n\tLobby");
+
+    function processInput(input){
+
+        if(input.toLowerCase() === "lobby"){
+            lobby();
+        }
+
+        else{
+            stayHere();
+            waitThenCall(talkCustomer);
+        }
+    }
+
+    waitForInput(processInput);
+}
+
+
+function playplaceLobby(){
+    clear();
+
+    print("\nI walked into the PlayPlace lobby... My inner child is rejoicing.");
+    print("\nIt looks so fun!!!");
+    print("\nIt doesn't smell the best though...");
+
+    print("\nWhere should I go?");
+    print("\n\tLobby");
+    print("\n\tSlide");
+    print("\n\tTunnel");
+
+    function processInput(input){
+
+        if(input.toLowerCase() === "lobby"){
+            lobby();
+        }
+
+        else if(input.toLowerCase() === "slide"){
+            slide();
+        }
+
+        else if(input.toLowerCase() === "tunnel"){
+            tunnel();
+        }
+
+        else{
+            stayHere();
+            waitThenCall(playplaceLobby);
+        }
+    }
+
+    waitForInput(processInput);
+}
+
+
+function slide(){
+    clear();
+
+    print("\nYou climb up the slide...");
+    print("\nYou slide down and land in the ball pit!");
+
+    ballPit();
+}
+
+
+function tunnel(){
+    clear();
+
+    print("\nYou crawl through the plastic tunnel.");
+    print("\nIt gets darker...");
+    print("\nYou fall into the ball pit!");
+
+    ballPit();
+}
+
+
+function ballPit(){
+    clear();
+
+    if(haveNote == false){
+
+        print("\nYou are in the ball pit.");
+        print("\nYou see a strange note buried in the balls.");
+
+        print("\n\tPickupNote");
+        print("\n\tLeaveNote");
+
+    }
+
+    else{
+
+        print("\nYou are back in the ball pit.");
+        print("\n\tTunnel");
+
+    }
+
+    function processInput(input){
+
+        if(input.toLowerCase() === "pickupnote" && haveNote == false){
+
+            haveNote = true;
+
+            print("\nYou pick up the note.");
+            print("\n\tTunnel");
+
+            waitThenCall(ballPit);
+        }
+
+        else if(input.toLowerCase() === "leavenote" && haveNote == false){
+
+            print("\nYou decide to leave the note where it is.");
+            print("\n\tTunnel");
+
+            waitThenCall(ballPit);
+        }
+
+        else if(input.toLowerCase() === "tunnel"){
+
+            playplaceLobby();
+        }
+
+        else{
+            stayHere();
+            waitThenCall(ballPit);
+        }
+    }
+
+    waitForInput(processInput);
+}
 
 //finally, make sure you customize this to tell it what should happen at the
 //very start. For this simple example, any input will bring you
