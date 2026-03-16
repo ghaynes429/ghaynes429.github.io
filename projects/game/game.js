@@ -6,8 +6,6 @@ let day = 0;
 let minutes = 0;
 
 
-  
-
 //Declare your other global variables here
 
 
@@ -20,24 +18,42 @@ function locationA() {
     print("\nI’ve finally arrived at McDonald’s, I can’t wait to try out the new Big Arch. I heard the CEO loves it!");
     print("\nWhere should I go? There's some intriguing creepy guy, but I'm also REALLY hungry" + "\n\tCreepyGuy" + "\n\tLobby");
 
-       function processInput(input){
+    function processInput(input){
         if (input.toLowerCase() === "creepyguy") {
-		creepyguy();
-	}	else if (input.toLowerCase() === "lobby"){
-		lobby();
-        } else {
+            creepyguy();
+        } 
+        else if (input.toLowerCase() === "lobby"){
+            lobby();
+        } 
+        else {
             stayHere();
             waitThenCall(locationA);
         }
     }
     waitForInput(processInput);
+}
 
-}
+
 function creepyguy(){
-	talktoCreepy = true;
+    talktoCreepy = true;
     clear();
-    print("\nI’m gonna talk to this creepy guy… hopefully I don’t get robbed or something…");print("\nCreepy Guy: H-hey… do you by chance have money to spare…? I’d REALLY like a McChicken..." + "\n\tLobby");
+    print("\nI’m gonna talk to this creepy guy… hopefully I don’t get robbed or something…");
+    print("\nCreepy Guy: H-hey… do you by chance have money to spare…? I’d REALLY like a McChicken..." + "\n\tLobby");
+
+    function processInput(input){
+        if(input.toLowerCase() === "lobby"){
+            lobby();
+        }
+        else{
+            stayHere();
+            waitThenCall(creepyguy);
+        }
+    }
+
+    waitForInput(processInput);
 }
+
+
 function lobby(){
     clear();
 
@@ -48,12 +64,12 @@ function lobby(){
     else{
 
         print("\nOh wow, I could've swore it was locked before...");
-	print("\nI look back and see the same guy walking to the door and use a key to turn the doorknob... I hear a weird *click* noise... I try to open the door and then...");
-	print("\nWhat the hell??? That creepy bastard locked me in!");
+        print("\nI look back and see the same guy walking to the door and use a key to turn the doorknob... I hear a weird *click* noise... I try to open the door and then...");
+        print("\nWhat the hell??? That creepy bastard locked me in!");
         print("\nWhere should I go?" + "\n\tFrontDesk" + "\n\tCustomer" + "\n\tPlayplaceLobby" + "\n\tFrontDoor");
 
     }
-}
+
     function processInput(input){
 
         if (input.toLowerCase() === "creepyguy") {
@@ -83,7 +99,7 @@ function lobby(){
     }
 
     waitForInput(processInput);
-
+}
 
 
 function frontDesk(){
@@ -92,7 +108,7 @@ function frontDesk(){
     if(haveNote == false){
 
         print("\nYou walk up to the front desk.");
-        print("\nChris: ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ The worker is fast asleep...");
+        print("\nChris: ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ The worker is fast asleep...");
         print("\n\tLobby");
 
     }
@@ -100,14 +116,14 @@ function frontDesk(){
     else if(haveNote == true && haveMcChicken == false){
 
         print("\nThe sound of my footsteps awaken the worker.");
-	print("\nChris: ZZZZ- WHAT?!? Oh... it's a customer. What would you like?");
-	print("\nMe: I'd like one McChicken please!");
-        print("\nChris: Alright... I guess I'll sell you a McChicken.");
+        print("\nChris?: ZZZZ- WHAT?!? Oh... it's a customer. What would you like?");
+        print("\nMe: I'd like one McChicken please!");
+        print("\nChris?: Alright... I guess I'll sell you a McChicken.");
 
         haveMcChicken = true;
 
         print("\nYou obtained a McChicken!");
-	print("\nThat guy really should get fired... He'd work better as a web design teacher or something...");
+        print("\nThat guy really should get fired... He'd work better as a web design teacher or something...");
         print("\n\tLobby");
 
     }
@@ -198,8 +214,8 @@ function playplaceLobby(){
 function slide(){
     clear();
 
-    print("\nYou climb up the slide...");
-    print("\nYou slide down and land in the ball pit!");
+    print("\nI climbed up the ladder and down the slide...");
+    print("\nIt led to some ball pit...?!");
 
     ballPit();
 }
@@ -208,9 +224,8 @@ function slide(){
 function tunnel(){
     clear();
 
-    print("\nYou crawl through the plastic tunnel.");
-    print("\nIt gets darker...");
-    print("\nYou fall into the ball pit!");
+    print("\nI crawled through the plastic tunnel.");
+    print("\nIt got darker... and darker... and darker...");
 
     ballPit();
 }
@@ -221,7 +236,7 @@ function ballPit(){
 
     if(haveNote == false){
 
-        print("\nYou are in the ball pit.");
+        print("\nI'm in the ball pit!!! It's pretty sticky in here though, gross.");
         print("\nYou see a strange note buried in the balls.");
 
         print("\n\tPickupNote");
@@ -231,7 +246,7 @@ function ballPit(){
 
     else{
 
-        print("\nYou are back in the ball pit.");
+        print("\nI am still in the ball pit.");
         print("\n\tTunnel");
 
     }
@@ -242,7 +257,8 @@ function ballPit(){
 
             haveNote = true;
 
-            print("\nYou pick up the note.");
+            print("\nI picked up the note... It says,");
+            print("\nBUY THE MAN A MCCHICKEN - CJ");
             print("\n\tTunnel");
 
             waitThenCall(ballPit);
@@ -250,7 +266,7 @@ function ballPit(){
 
         else if(input.toLowerCase() === "leavenote" && haveNote == false){
 
-            print("\nYou decide to leave the note where it is.");
+            print("\nI decided to leave the note where it is.");
             print("\n\tTunnel");
 
             waitThenCall(ballPit);
@@ -270,14 +286,52 @@ function ballPit(){
     waitForInput(processInput);
 }
 
-//finally, make sure you customize this to tell it what should happen at the
-//very start. For this simple example, any input will bring you
-//to locationA
-function start(){
-    print("Welcome to my game! Press any key to start");
+
+function frontDoor(){
+    clear();
+
+    if(haveMcChicken == true){
+
+        print("\nYou show the McChicken to the creepy guy.");
+        print("\nCreepy Guy: You actually got one for me... thank you...");
+        print("\nHe unlocks the door.");
+        print("\nYou escape McDonald's!");
+
+        gameActive = false;
+
+    }
+
+    else{
+
+        print("\nThe creepy guy blocks the door.");
+        print("\nCreepy Guy: Please... I just want a McChicken...");
+        print("\n\tLobby");
+
+    }
 
     function processInput(input){
-            locationA();
+
+        if(input.toLowerCase() === "lobby"){
+            lobby();
+        }
+
+        else{
+            stayHere();
+            waitThenCall(frontDoor);
+        }
     }
+
+    waitForInput(processInput);
+}
+
+
+//Game start
+function start(){
+    print("\nWelcome to McDonalds! May I take your order? (Press any key to start)");
+
+    function processInput(input){
+        locationA();
+    }
+
     waitForInput(processInput);
 }
