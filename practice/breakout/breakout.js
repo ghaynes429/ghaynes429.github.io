@@ -9,6 +9,13 @@ let y = Math.random()*800;
 let dx = 2;
 let dy = -2;
 
+
+let x2 = Math.random()*800;
+let y2 = Math.random()*800;
+
+let dx2 = 2;
+let dy2 = -2;
+
 const paddleHeight = 10;
 const paddleWidth = 75;
 
@@ -20,11 +27,11 @@ let interval = 0;
 
 const brickRowCount = 3;
 const brickColumnCount = 5;
-const brickWidth = 75;
-const brickHeight = 20;
+const brickWidth = 130;
+const brickHeight = 50;
 const brickPadding = 10;
 const brickOffsetTop = 30;
-const brickOffsetLeft = 30;
+const brickOffsetLeft = 50;
 
 
 function drawBricks(){
@@ -32,6 +39,12 @@ function drawBricks(){
     for (let r = 0; r < brickRowCount; r++) {
       //TODO: use the variables above to write the code that draws the bricks.
       //this should be a single function call to ctx.fillRect();
+	    ctx.fillRect(
+		    brickOffsetLeft + c*(brickWidth + brickPadding),
+		    brickOffsetTop + r*(brickHeight + brickPadding),
+		    brickWidth,
+		    brickHeight,
+	);
     }
   }
 }
@@ -55,11 +68,20 @@ function keyUpHandler(e) {
 document.addEventListener("keydown", keyDownHandler);
 document.addEventListener("keyup", keyUpHandler);
 
+//ball
 function drawBall() {
   ctx.beginPath();
   ctx.arc(x, y, ballRadius, 0, Math.PI * 2);
   ctx.fill();
   ctx.closePath();
+
+//ball2
+function drawBall() 
+  ctx.beginPath();
+  ctx.arc(x2, y2, ballRadius, 0, Math.PI * 2);
+  ctx.fill();
+  ctx.closePath();
+
 }
 function drawPaddle() {
   ctx.beginPath();
