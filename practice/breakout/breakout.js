@@ -1,41 +1,40 @@
-<!doctype html>
-<html lang="en-US">
-  <head>
-    <meta charset="utf-8" />
-    <title>Gamedev Canvas Workshop</title>
-    <style>
-      * {
-        padding: 0;
-        margin: 0;
-      }
-      canvas {
-        background: #eeeeee;
-        display: block;
-        margin: 0 auto;
-      }
-    </style>
-  </head>
-  <body>
-	    <canvas id="myCanvas" width="480" height="320"></canvas>
-<button id="runButton">Start game</button>
-
-
-    <script>
 const canvas = document.getElementById("myCanvas");
 const ctx = canvas.getContext("2d");
+
 const ballRadius = 10;
-let x = canvas.width / 2;
-let y = canvas.height - 30;
+
+let x = Math.random()*800;
+let y = Math.random()*800;
+
 let dx = 2;
 let dy = -2;
+
 const paddleHeight = 10;
 const paddleWidth = 75;
+
 let paddleX = (canvas.width - paddleWidth) / 2;
 let rightPressed = false;
 let leftPressed = false;
 
-document.addEventListener("keydown", keyDownHandler);
-document.addEventListener("keyup", keyUpHandler);
+let interval = 0;
+
+const brickRowCount = 3;
+const brickColumnCount = 5;
+const brickWidth = 75;
+const brickHeight = 20;
+const brickPadding = 10;
+const brickOffsetTop = 30;
+const brickOffsetLeft = 30;
+
+
+function drawBricks(){
+  for (let c = 0; c < brickColumnCount; c++) {
+    for (let r = 0; r < brickRowCount; r++) {
+      //TODO: use the variables above to write the code that draws the bricks.
+      //this should be a single function call to ctx.fillRect();
+    }
+  }
+}
 
 function keyDownHandler(e) {
   if (e.key === "Right" || e.key === "ArrowRight") {
@@ -53,17 +52,18 @@ function keyUpHandler(e) {
   }
 }
 
+document.addEventListener("keydown", keyDownHandler);
+document.addEventListener("keyup", keyUpHandler);
+
 function drawBall() {
   ctx.beginPath();
   ctx.arc(x, y, ballRadius, 0, Math.PI * 2);
-  ctx.fillStyle = "#0095DD";
   ctx.fill();
   ctx.closePath();
 }
 function drawPaddle() {
   ctx.beginPath();
   ctx.rect(paddleX, canvas.height - paddleHeight, paddleWidth, paddleHeight);
-  ctx.fillStyle = "#0095DD";
   ctx.fill();
   ctx.closePath();
 }
@@ -72,41 +72,26 @@ function draw() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   drawBall();
   drawPaddle();
+  drawBricks();
 
   if (x + dx > canvas.width - ballRadius || x + dx < ballRadius) {
     dx = -dx;
   }
-  if (y + dy > canvas.height - ballRadius || y + dy < ballRadius) {
+  if (y + dy < ballRadius || y + dy > canvas.height - ballRadius) {
     dy = -dy;
   }
 
-  if (rightPressed) {
+  if (rightPressed && paddleX < canvas.width - paddleWidth) {
     paddleX += 7;
-    if (paddleX + paddleWidth > canvas.width) {
-      paddleX = canvas.width - paddleWidth;
-    }
-  } else if (leftPressed) {
+  } else if (leftPressed && paddleX > 0) {
     paddleX -= 7;
-    if (paddleX < 0) {
-      paddleX = 0;
-    }
   }
 
+  //move the ball
   x += dx;
   y += dy;
+
+  requestAnimationFrame(draw);
 }
 
-function startGame() {
-  setInterval(draw, 10);
-}
-
-const runButton = document.getElementById("runButton");
-runButton.addEventListener("click", () => {
-  startGame();
-  runButton.disabled = true;
-});
-
-      // JavaScript code goes here
-    </script>
-  </body>
-</html>
+draw()
