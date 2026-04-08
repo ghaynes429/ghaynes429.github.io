@@ -8,6 +8,12 @@ function clickHandler(e){
 
     //TODO: write some code here that checks whether
     //(mouseX, mouseY) is inside j
+	  if(mouseX < junk_max_x
+		  && mouseX > junk_min_x
+		  && mouseY < junk_max_y
+		  && mouseY > junk_min_y){
+			  j.alive=false;
+		  }
 
   }
 }
@@ -31,6 +37,17 @@ function checkCollisions(){
                 ship_min_y = s.y - 15*s.size;
                 ship_max_y = s.y + 15*s.size;
 
+		    if(
+			//collision on the x axisfirst
+			    ship_max_x > junk_min_x
+			    && ship_min_x < junk_max_x
+		    ){
+
+			    j.alive = false;
+			    s.alive = false;
+
+
+		    }
             }
         }
     }
