@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gabriel Haynes: Hobbies</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Source+Sans+3:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="note-field" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="brand">
+        <svg class="brand-mark" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="50" cy="50" r="48" stroke="#C9A24B" stroke-width="4"/>
+          <ellipse cx="38" cy="68" rx="11" ry="9" transform="rotate(-18 38 68)" fill="#F7F5F0"/>
+          <rect x="48" y="22" width="4" height="48" fill="#F7F5F0"/>
+          <path d="M52 22 C 70 28, 80 42, 74 58 C 82 48, 82 30, 52 22 Z" fill="#F7F5F0"/>
+        </svg>
+        <span class="brand-text">Gabriel Haynes</span>
+      </a>
+      <button class="hamburger" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="piano-nav">
+        <li><a href="index.html" data-page="index.html">About</a></li>
+        <li><a href="volunteering.html" data-page="volunteering.html">Volunteering</a></li>
+        <li><a href="psychology.html" data-page="psychology.html">Psychology</a></li>
+        <li><a href="projects.html" data-page="projects.html">Projects</a></li>
+        <li><a href="hobbies.html" data-page="hobbies.html">Hobbies</a></li>
+        <li><a href="contact.html" data-page="contact.html">Contact</a></li>
+      </ul>
+      <div class="disc-player">
+        <button class="disc-btn" aria-label="Play a random song"></button>
+        <div class="disc-tooltip">
+          <span class="now-playing-label">Now playing</span>
+          <span class="now-playing-text">Tap the disc</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="page-content">
+    <main>
+
+      <section class="hero">
+        <div class="eyebrow">Outside the Classroom</div>
+        <h1>What I do for <span class="accent">fun</span></h1>
+        <p class="subtitle">Music has been part of my life longer than almost anything else. Basketball is a close second.</p>
+      </section>
+
+      <section class="block reveal">
+        <h2><span class="num">01</span>Making music</h2>
+        <p class="lead">For about a year now, I've been making my own music, writing, recording, and putting tracks together on my own.</p>
+        <p>It started as a way to experiment with sounds I liked from the artists I listen to most, and it's turned into something I come back to regularly. The disc player in the corner of this site plays a few of the songs that have shaped my taste and my own sound, a mix of R&amp;B, alternative, and hip-hop. Give it a click.</p>
+      </section>
+
+      <section class="block reveal">
+        <h2><span class="num">02</span>Choir &amp; singing</h2>
+        <p>I've been in choir since 4th grade, and I was singing outside of school even before that. It's been one of the most consistent parts of my life. Choir taught me how to actually listen, to my own voice, to the people around me, and to how all the parts fit together, which has carried directly into how I write and produce my own music.</p>
+      </section>
+
+      <section class="block reveal">
+        <h2><span class="num">03</span>Basketball</h2>
+        <p class="lead">I love playing basketball just as much as watching it, and my team is the Washington Wizards.</p>
+        <p>Whether I'm out playing or watching a Wizards game, basketball has always been one of my go-to ways to unwind. It's also something I share with family, including trips to games and watching together.</p>
+        <div class="grid-2" style="margin-top: 1.5rem;">
+          <div class="card">
+            <img src="assets/images/wizards-game.jpg" alt="At a Washington Wizards game with my brother" class="hobby-photo">
+            <p style="margin-bottom:0;">At a Wizards game with my brother.</p>
+          </div>
+          <div class="card">
+            <img src="assets/images/family-tower.jpg" alt="With family at an observation deck" class="hobby-photo">
+            <p style="margin-bottom:0;">A day out with my family, the kind of moment that recharges me before the next project, rehearsal, or game.</p>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      Gabriel Haynes &middot; Arlington, Virginia &middot; Built with HTML, CSS &amp; JS
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

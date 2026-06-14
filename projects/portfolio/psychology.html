@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gabriel Haynes: Psychology</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Source+Sans+3:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="note-field" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="brand">
+        <svg class="brand-mark" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="50" cy="50" r="48" stroke="#C9A24B" stroke-width="4"/>
+          <ellipse cx="38" cy="68" rx="11" ry="9" transform="rotate(-18 38 68)" fill="#F7F5F0"/>
+          <rect x="48" y="22" width="4" height="48" fill="#F7F5F0"/>
+          <path d="M52 22 C 70 28, 80 42, 74 58 C 82 48, 82 30, 52 22 Z" fill="#F7F5F0"/>
+        </svg>
+        <span class="brand-text">Gabriel Haynes</span>
+      </a>
+      <button class="hamburger" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="piano-nav">
+        <li><a href="index.html" data-page="index.html">About</a></li>
+        <li><a href="volunteering.html" data-page="volunteering.html">Volunteering</a></li>
+        <li><a href="psychology.html" data-page="psychology.html">Psychology</a></li>
+        <li><a href="projects.html" data-page="projects.html">Projects</a></li>
+        <li><a href="hobbies.html" data-page="hobbies.html">Hobbies</a></li>
+        <li><a href="contact.html" data-page="contact.html">Contact</a></li>
+      </ul>
+      <div class="disc-player">
+        <button class="disc-btn" aria-label="Play a random song"></button>
+        <div class="disc-tooltip">
+          <span class="now-playing-label">Now playing</span>
+          <span class="now-playing-text">Tap the disc</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="page-content">
+    <main>
+
+      <section class="hero">
+        <div class="eyebrow">Career Interest</div>
+        <h1>Understanding the <span class="accent">mind</span></h1>
+        <p class="subtitle">Psychology is the field I keep coming back to. I like figuring out why people feel and act the way they do, then thinking about how to actually help.</p>
+      </section>
+
+      <section class="block reveal">
+        <h2><span class="num">01</span>Why psychology</h2>
+        <p class="lead">In my Psychology coursework, I've conducted mock case studies to diagnose mental health concerns in fictional patients and researched disabilities related to sleep, cognitive function, and other mental delays.</p>
+        <p>What draws me to this field is the mix of structure and empathy it requires. There's a real process for figuring out what's going on with someone, working through symptoms, history, and possible diagnoses, but at the center of all of it is a person. I want a career where I get to use that process to actually help people understand and manage what they're going through.</p>
+      </section>
+
+      <section class="block reveal">
+        <h2><span class="num">02</span>Case study: acrophobia</h2>
+        <p>For one of my Psychology assignments, I built a full mock case study around a fictional patient I named Booger, a 28-year-old software engineer with generalized anxiety disorder and a fear of heights. The project walked through the entire process a clinician might use, from intake to diagnosis to a treatment plan.</p>
+
+        <div class="project">
+          <div class="project-media">
+            <iframe src="assets/docs/Phobias_Case_Study.pdf" title="Phobia Case Study preview" style="width: 100%; height: 320px; border: none;" loading="lazy"></iframe>
+          </div>
+          <div>
+            <span class="project-label">Mock Case Study</span>
+            <h3>Acrophobia: A Case Study</h3>
+            <p>I introduced the patient's background, then brought in outside research, including a CNN-based study on detecting acrophobia and VR exposure therapy from <em>Frontiers in Human Neuroscience</em>, plus general phobia statistics from SingleCare. From there, I worked through how a clinician would confirm the diagnosis, using interviews, a phobia screening test, an exposure-based assessment, and ruling out other possible diagnoses.</p>
+            <p>The case study ends with a treatment plan combining cognitive behavioral therapy, gradual exposure therapy, VR therapy, and breathing and meditation techniques, then projects what the patient's life could look like at one month, six months, and one year into treatment.</p>
+            <a class="btn" href="assets/docs/Phobias_Case_Study.pdf" target="_blank" rel="noopener">View the full case study</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="block reveal">
+        <h2><span class="num">03</span>What I took from it</h2>
+        <ul class="styled">
+          <li>How to translate a list of symptoms into a structured diagnostic process, rather than jumping straight to a conclusion.</li>
+          <li>How to pull research from multiple credible sources (clinical journals, health organizations) and connect it back to one specific person's situation.</li>
+          <li>How a treatment plan has to account for someone's whole life, not just the symptom itself, since Booger's fear of heights was affecting his job, his social life, and his mental health all at once.</li>
+        </ul>
+        <p>Projects like this confirm what I already suspected: I want to keep doing this kind of work, just with real people, in a real clinical or counseling setting.</p>
+      </section>
+
+    </main>
+
+    <footer>
+      Gabriel Haynes &middot; Arlington, Virginia &middot; Built with HTML, CSS &amp; JS
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
